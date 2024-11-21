@@ -33,7 +33,8 @@ class HealthIcon extends FlxSprite
 			var iSize:Float = Math.round(graphic.width / graphic.height);
 			loadGraphic(graphic, true, Math.floor(graphic.width / iSize), Math.floor(graphic.height));
 			iconOffsets[0] = (width - 150) / iSize;
-			iconOffsets[1] = (height - 150) / iSize;
+			iconOffsets[1] = (width - 150) / iSize;
+			iconOffsets[2] = (height - 150) / iSize;
 			updateHitbox();
 
 			animation.add(char, [for(i in 0...frames.frames.length) i], 0, false, isPlayer);
@@ -54,7 +55,7 @@ class HealthIcon extends FlxSprite
 		if(autoAdjustOffset)
 		{
 			offset.x = iconOffsets[0];
-			offset.y = iconOffsets[1];
+			offset.y = iconOffsets[2];
 		}
 	}
 
